@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(230, 230, 230);
+}
+
+.grid {
+    display: flex;
+    /* max-width: 496px;
+    max-height: 496px; */
+    flex-wrap: wrap;
+    background-color: white;
+    box-shadow:5px 5px 5px rgb(172, 172, 172);
+}
+
+.grid-element {
+    width: 31px;
+    height: 31px;
+    /* background: yellow; */
+}
+
+/* .grid-element:hover {
+    background-color: black;
+} */
