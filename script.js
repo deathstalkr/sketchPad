@@ -1,10 +1,15 @@
 let grid = document.querySelector(".grid");
 const gridSizeBtn = document.querySelector("#grid-size-btn");
 let gridSize = 16;
+let currentColor = "#333333";
+let colorPicker = document.getElementById("colorPicker");
+
+colorPicker.oninput = (e) => setCurrentColor(e.target.value);
+
 addGrid(gridSize);
 
 gridSizeBtn.addEventListener("click", function () {
-	gridSize = prompt("Enter grid size", `32`);
+	gridSize = prompt("Enter grid size", `24`);
 	while (grid.firstChild) {
 		grid.removeChild(grid.firstChild);
 	}
@@ -21,21 +26,24 @@ function addGrid(gridSize) {
 		divBox.setAttribute("class", "grid-element");
 		grid.appendChild(divBox);
 	}
-	colorChange();
+	colorChange(currentColor);
 }
 
-function colorChange() {
+function colorChange(currentColor) {
 	let nodeList = document.querySelectorAll(".grid-element");
-	console.log("nodeList:", nodeList);
 
 	gridElement = Array.from(nodeList);
-	console.log("gridElement:", gridElement);
 
 	gridElement.forEach((element) => {
 		element.addEventListener("mouseenter", function () {
-			this.style.backgroundColor = "black";
+			this.style.backgroundColor = currentColor;
 		});
 	});
+}
+
+function setCurrentColor(newColor) {
+	currentColor = newColor;
+	colorChange(currentColor);
 }
 
 // gridElement.addEventListener('mouseenter', () => {
