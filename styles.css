@@ -7,19 +7,9 @@ body {
 
 .grid {
 	display: flex;
-	/* max-width: 496px;
-    max-height: 496px; */
-	flex-wrap: wrap;
+	width: 70rem;
+    height: 70rem;
+	flex-flow: row wrap;
 	background-color: white;
 	box-shadow: 5px 5px 5px rgb(172, 172, 172);
 }
-
-.grid-element {
-	width: 31px;
-	height: 31px;
-	/* background: yellow; */
-}
-
-/* .grid-element:hover {
-    background-color: black;
-} */

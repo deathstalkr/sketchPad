@@ -1,10 +1,22 @@
 const grid = document.querySelector(".grid");
-const gridSizeBtn = document.querySelector("#grid-size-btn");
 const colorPicker = document.getElementById("colorPicker");
 const rainbowBtn = document.getElementById("rainbow");
 const eraserBtn = document.getElementById("eraser");
+const resetBtn = document.getElementById("reset");
+const sizeInput = document.getElementById("gridSize");
 
 let currentMode = "default";
+let inputGridSize;
+
+sizeInput.addEventListener("input", function (e) {
+	inputGridSize = e.target.value;
+	createGrid(inputGridSize);
+});
+
+resetBtn.onclick = () => {
+	currentMode = "default";
+	createGrid(inputGridSize);
+};
 
 colorPicker.oninput = (e) => {
 	currentMode = "default";
@@ -12,34 +24,37 @@ colorPicker.oninput = (e) => {
 };
 
 eraserBtn.onclick = () => (currentMode = "eraser");
+
 rainbowBtn.onclick = () => {
 	currentMode = "rainbow";
-	setCurrentColor();
+	colorChange();
 };
 
-gridSizeBtn.addEventListener("click", function () {
-	gridSize = prompt("Enter grid size", `24`);
+function createGrid(newGridSize) {
 	while (grid.firstChild) {
 		grid.removeChild(grid.firstChild);
 	}
-	addGrid(gridSize);
-});
+	addGrid(newGridSize);
+}
+
+function createDiv(size) {
+	divBox = document.createElement("div");
+	divBox.setAttribute("class", "divBox");
+	divBox.style.width = `${size}px`;
+	divBox.style.height = `${size}px`;
+
+	return divBox;
+}
 
 function addGrid(gridSize = 16) {
-	grid.setAttribute(
-		"style",
-		`max-width: ${gridSize * 31}px; max-height: ${gridSize * 31}px;`
-	);
 	for (let i = 1; i <= gridSize * gridSize; i++) {
-		divBox = document.createElement("div");
-		divBox.setAttribute("class", "grid-element");
-		grid.appendChild(divBox);
+		grid.appendChild(createDiv(grid.clientWidth / gridSize));
 	}
 	colorChange();
 }
 
 function colorChange(currentColor = "#333333") {
-	let nodeList = document.querySelectorAll(".grid-element");
+	let nodeList = document.querySelectorAll(".divBox");
 
 	gridElement = Array.from(nodeList);
 
