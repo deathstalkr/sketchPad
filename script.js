@@ -1,15 +1,19 @@
-const grid = document.querySelector(".grid");
+const grid = document.querySelector("#grid");
 const colorPicker = document.getElementById("colorPicker");
 const rainbowBtn = document.getElementById("rainbow");
 const eraserBtn = document.getElementById("eraser");
 const resetBtn = document.getElementById("reset");
 const sizeInput = document.getElementById("gridSize");
+const gridValue = document.getElementById("gridValue");
 
 let currentMode = "default";
 let inputGridSize;
 
+gridValue.textContent = `Grid Size: 16 x 16`
+
 sizeInput.addEventListener("input", function (e) {
 	inputGridSize = e.target.value;
+	gridValue.textContent = `Grid Size: ${inputGridSize} x ${inputGridSize}`
 	createGrid(inputGridSize);
 });
 

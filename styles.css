@@ -5,11 +5,92 @@ body {
 	background-color: rgb(230, 230, 230);
 }
 
-.grid {
+.title {
+	text-align: center;
+	font-size: 4rem;
+}
+
+.sketchPad {
 	display: flex;
-	width: 70rem;
-    height: 70rem;
+	justify-content: space-around;
+}
+
+#colorPicker {
+	width: 60px;
+	height: 60px;
+	border: none;
+	padding: 0;
+}
+.controls {
+	display: flex;
+	flex-direction: column;
+	/* position: relative; */
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	width: 200px;
+}
+
+button, input {
+	width: 100%;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+	border: 1px solid;
+	font-weight: 800;
+	transition: transform 0.1s ease-in-out;
+	font-size: 16px;
+
+
+}
+button:hover, input:hover {
+	transform: scale(1.05);
+}
+
+button:active {
+	background-color: #333333;
+	color: #ededed;
+}
+
+input[type = 'range'] {
+	padding: 0;
+}
+#grid {
+	display: flex;
+	width: 50rem;
+    height: 50rem;
 	flex-flow: row wrap;
 	background-color: white;
 	box-shadow: 5px 5px 5px rgb(172, 172, 172);
+	position: relative;
+}
+
+.footer {
+	display: flex;
+	position: relative;
+	bottom: 0;
+	left: 0;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	width: 100%;
+	padding: 10px;
+	font-size: 30px;
+}
+
+.fab {
+	font-weight: 400;
+	font-family: "Font Awesome 5 Brands";
+}
+
+.fa-github {
+	font-size: 30px;
+	transition: transform 0.3s ease-in-out;
+	color: #333333;
+}
+
+.fa-github:hover {
+	transform: rotate(360deg) scale(1.2);
 }
