@@ -29,6 +29,7 @@ body {
 	align-items: center;
 	gap: 20px;
 	width: 200px;
+	font-size: 20px;
 }
 
 button, input {
@@ -49,7 +50,7 @@ button:hover, input:hover {
 	transform: scale(1.05);
 }
 
-button:active {
+button.active, button:active {
 	background-color: #333333;
 	color: #ededed;
 }
@@ -69,14 +70,14 @@ input[type = 'range'] {
 
 .footer {
 	display: flex;
-	position: relative;
+	/* position: relative; */
 	bottom: 0;
 	left: 0;
 	align-items: center;
 	justify-content: center;
 	gap: 10px;
 	width: 100%;
-	padding: 10px;
+	/* padding: 10px; */
 	font-size: 30px;
 }
 
