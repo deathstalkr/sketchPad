@@ -32,7 +32,8 @@ body {
 	font-size: 20px;
 }
 
-button, input {
+button,
+input {
 	width: 100%;
 	cursor: pointer;
 	outline: none;
@@ -43,25 +44,25 @@ button, input {
 	font-weight: 800;
 	transition: transform 0.1s ease-in-out;
 	font-size: 16px;
-
-
 }
-button:hover, input:hover {
+button:hover,
+input:hover {
 	transform: scale(1.05);
 }
 
-button.active, button:active {
+button.active,
+button:active {
 	background-color: #333333;
 	color: #ededed;
 }
 
-input[type = 'range'] {
+input[type="range"] {
 	padding: 0;
 }
 #grid {
 	display: flex;
 	width: 50rem;
-    height: 50rem;
+	height: 50rem;
 	flex-flow: row wrap;
 	background-color: white;
 	box-shadow: 5px 5px 5px rgb(172, 172, 172);

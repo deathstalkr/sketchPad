@@ -18,13 +18,13 @@ SIZEINPUT.addEventListener("input", function (e) {
 });
 
 RESETBTN.onclick = () => {
-	activateButton("reset")
+	activateButton("reset");
 	currentMode = "color";
 	createGrid(inputGridSize);
 };
 
 COLORPICKER.oninput = (e) => {
-	activateButton("color")
+	activateButton("color");
 	currentMode = "color";
 	colorChange(e.target.value);
 };
